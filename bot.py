@@ -127,7 +127,7 @@ async def start_in(event):
 async def helper(event):
     await event.edit(
         '**Usage instructions.**\n\nAdd me to your channel, as administrator, with "add users" permission, and forward me a message from that chat to set me up!\n\nI will auto approve new join request.',
-        buttons=Button.inline("Main Menu 📭", data="start"),
+        buttons=Button.inline("Main Menu 📭", data="autoapprove"),
     )
 
 
@@ -257,7 +257,7 @@ async def approver(event):
         await bot.send_message(
             event.user_id,
             chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),
-            buttons=Button.url("Updates", url="https://t.me/BotzHub"),
+            buttons=Button.url("Updates", url="https://t.me/PokeTide"),
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
         await bot(
