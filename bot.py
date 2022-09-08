@@ -100,7 +100,7 @@ start_buttons = [
 ]
 
 
-@bot.on(events.NewMessage(incoming=True, pattern=f"^/start({bot_username})?$"))
+@bot.on(events.NewMessage(incoming=True, pattern=f"^/autoapprove({bot_username})?$"))
 async def starters(event):
     from_ = await bot.get_entity(event.sender_id)
     await event.reply(
