@@ -135,7 +135,7 @@ async def helper(event):
 async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
     id = event.fwd_from.from_id
     if not isinstance(id, types.PeerChannel):
-        await event.reply("Looks like this isn't from a channel!")
+        await event.reply("You cannot forward someone else's messages.")
         return
     try:
         chat = await bot.get_entity(id)
